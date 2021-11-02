@@ -1,0 +1,109 @@
+body{
+    background-color:  rgba(238, 249, 191, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.titulo{
+    width: 540px;
+    height: 63px;
+    left: 285px;
+    top: 40px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+
+    color: #75B79E;
+    margin: 40px 0;
+}
+main{
+    width: 1110px;
+    height: 629px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 34px;
+    margin: 0 88px;
+}
+.card{
+    width: 117px;
+    height: 146px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #A7E9AF;
+    border: 1px solid #99CEA8;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.card img{
+    width: 100px;
+    height: 100px;
+}
+/* screen na vertical (display referencia: galaxys5)*/ 
+@media (max-width: 360px){
+
+    body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    }
+    .titulo{
+    width: 312px;
+    height: 63px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    }
+    main{
+    width: 360px;
+    display: flex;
+    flex-direction: row;
+    
+    padding-left: 109px;
+    padding-right: 109px;
+    gap: 34px;
+    }
+}   
+/* screen na horizontal (display referencia: galaxys5)*/
+@media (max-width: 640px) and (min-width: 361px){
+
+    body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    }
+    .titulo{
+    width: 640px;
+    height: 63px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    }
+    main{
+    width: 640px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 80px;
+    padding-right: 80px;
+    gap: 34px;
+    }
+}   
