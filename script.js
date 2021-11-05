@@ -39,4 +39,7 @@ function numberCards(valueCardsGame) {
             + carta.innerHTML;
         contador++;
     }
+
+    const apresentacao = document.querySelector('.container-apresentacao')
+    apresentacao.classList.add('hidden')
 }
