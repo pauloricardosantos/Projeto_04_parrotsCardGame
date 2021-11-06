@@ -44,11 +44,11 @@ function sendCard() {
     for (let i = 0; i < valueCardsGame; i++) {
         card.innerHTML +=
             `<li>
-                <div data-identifier="card" class="card">
+                <div onclick="cursorClick(this)" "data-identifier="card" class="card">
                     <div data-identifier="front-face" class="front-face face">
                         <img src="/assets/front.png" alt="">
                     </div>
-                    <div data-identifier="back-face" class="back-face face">
+                    <div  data-identifier="back-face" class="back-face face">
                     <img src="/assets/${choosedCards[i]}.gif" alt="">
                     </div>
                 </div>
@@ -63,3 +63,8 @@ function mix() {
 function comparator() {
     return Math.random() - 0.5;
 }
+
+function cursorClick(jorge) {
+    jorge.classList.add("card-selected")
+}
+

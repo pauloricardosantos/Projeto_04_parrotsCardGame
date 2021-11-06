@@ -66,11 +66,11 @@ body{
     transform: rotateY(180deg);
   }
 
-  .card:hover .back-face {
+  .card-selected .back-face {
     transform: rotateY(0deg);
   }
 
-  .card:hover .front-face {
+  .card-selected .front-face {
     transform: rotateY(-180deg);
   }
 
@@ -183,6 +183,8 @@ footer{
     font-size: 36px;
     line-height: 42px;
     text-align: center;
+
+    cursor: pointer;
     }
     .cards-game{
     width: 360px;
