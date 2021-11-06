@@ -22,8 +22,8 @@ body{
     margin: 40px 0;
 }
 .cards-game{
-    width: 1110px;
-    height: 629px;
+    /* width: 1110px;
+    height: 629px; */
 
     display: flex;
     flex-wrap: wrap;
@@ -33,18 +33,47 @@ body{
     margin: 0 88px;
 }
 .card{
-    width: 117px;
-    height: 146px;
+    /* width: 117px;
+    height: 146px; */
+    width: 200px;
+    height: 250px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background: #A7E9AF;
+    /* background: #A7E9AF;
     border: 1px solid #99CEA8;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 5px; */
 }
+.face {
+    width: 200px;
+    height: 250px;
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+  }
+
+  .back-face {
+    transform: rotateY(180deg);
+  }
+
+  .card:hover .back-face {
+    transform: rotateY(0deg);
+  }
+
+  .card:hover .front-face {
+    transform: rotateY(-180deg);
+  }
+
 .card img{
     width: 100px;
     height: 100px;
@@ -123,6 +152,15 @@ body{
 }
 .hidden{
     display: none;
+}
+footer{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(209, 66, 66);
+
+    margin-top: 100px;
 }
 
 
