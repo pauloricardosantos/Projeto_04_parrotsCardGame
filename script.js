@@ -33,6 +33,7 @@ buttonSend.addEventListener("click", function (e) {
 })
 
 
+
 function sendCard() {
     mix()
     for (let i = 0; i < (valueCardsGame / 2); i++) {
@@ -44,7 +45,7 @@ function sendCard() {
     for (let i = 0; i < valueCardsGame; i++) {
         card.innerHTML +=
             `<li>
-                <div onclick="cursorClick(this)" "data-identifier="card" class="card">
+                <div id="${choosedCards[i]}" onclick="cursorClick(this)" "data-identifier="card" class="card">
                     <div data-identifier="front-face" class="front-face face">
                         <img src="/assets/front.png" alt="">
                     </div>
@@ -55,6 +56,10 @@ function sendCard() {
             </li>`
         const welcome = document.querySelector('.container-apresentacao')
         welcome.classList.add('hidden')
+
+
+
+
     }
 }
 function mix() {
@@ -64,7 +69,35 @@ function comparator() {
     return Math.random() - 0.5;
 }
 
-function cursorClick(jorge) {
-    jorge.classList.add("card-selected")
-}
+let escolhaDeCarta = 0
+let primeiraCarta
+let segundaCarta
 
+function cursorClick(card) {
+
+    card.classList.add("card-selected")
+    escolhaDeCarta++
+
+
+    if (escolhaDeCarta == 1) {
+        primeiraCarta = card
+        console.log(primeiraCarta.innerHTML)
+    }
+    if (escolhaDeCarta == 2) {
+        segundaCarta = card
+        console.log(segundaCarta.innerHTML)
+
+        if (primeiraCarta.innerHTML == segundaCarta.innerHTML) {
+            alert("oi")
+            escolhaDeCarta = 0
+        } else {
+            setTimeout(atraso, 1000)
+            function atraso() {
+
+                primeiraCarta.classList.remove("card-selected")
+                segundaCarta.classList.remove("card-selected")
+            }
+            escolhaDeCarta = 0
+        }
+    }
+}
