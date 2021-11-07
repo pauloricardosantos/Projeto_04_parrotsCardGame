@@ -33,7 +33,6 @@ buttonSend.addEventListener("click", function (e) {
 })
 
 
-
 function sendCard() {
     mix()
     for (let i = 0; i < (valueCardsGame / 2); i++) {
@@ -57,9 +56,6 @@ function sendCard() {
         const welcome = document.querySelector('.container-apresentacao')
         welcome.classList.add('hidden')
 
-
-
-
     }
 }
 function mix() {
@@ -72,6 +68,7 @@ function comparator() {
 let escolhaDeCarta = 0
 let primeiraCarta
 let segundaCarta
+let contadorJogadas = 0
 
 function cursorClick(card) {
 
@@ -81,15 +78,16 @@ function cursorClick(card) {
 
     if (escolhaDeCarta == 1) {
         primeiraCarta = card
-        console.log(primeiraCarta.innerHTML)
+        contadorJogadas++
+
     }
     if (escolhaDeCarta == 2) {
         segundaCarta = card
-        console.log(segundaCarta.innerHTML)
+        contadorJogadas++
 
         if (primeiraCarta.innerHTML == segundaCarta.innerHTML) {
-            alert("oi")
             escolhaDeCarta = 0
+            finalGame()
         } else {
             setTimeout(atraso, 1000)
             function atraso() {
@@ -99,5 +97,12 @@ function cursorClick(card) {
             }
             escolhaDeCarta = 0
         }
+    }
+}
+function finalGame() {
+
+    const quantidadeCartasViradas = document.querySelectorAll(".card-selected")
+    if (quantidadeCartasViradas.length == valueCardsGame) {
+        alert("Você ganhou em " + contadorJogadas + " jogadas!")
     }
 }
