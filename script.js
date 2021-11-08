@@ -65,44 +65,45 @@ function comparator() {
     return Math.random() - 0.5;
 }
 
-let escolhaDeCarta = 0
-let primeiraCarta
-let segundaCarta
-let contadorJogadas = 0
+let clickCard = 0
+let firstCard
+let secondCard
+let counterMove = 0
 
 function cursorClick(card) {
 
     card.classList.add("card-selected")
-    escolhaDeCarta++
+    clickCard++
 
 
-    if (escolhaDeCarta == 1) {
-        primeiraCarta = card
-        contadorJogadas++
+    if (clickCard == 1) {
+        firstCard = card
+        counterMove++
 
     }
-    if (escolhaDeCarta == 2) {
-        segundaCarta = card
-        contadorJogadas++
+    if (clickCard == 2) {
+        secondCard = card
+        counterMove++
 
-        if (primeiraCarta.innerHTML == segundaCarta.innerHTML) {
-            escolhaDeCarta = 0
-            finalGame()
+        if (firstCard.innerHTML == secondCard.innerHTML) {
+            clickCard = 0
+            endGame()
         } else {
-            setTimeout(atraso, 1000)
-            function atraso() {
+            setTimeout(delay, 1000)
+            function delay() {
 
-                primeiraCarta.classList.remove("card-selected")
-                segundaCarta.classList.remove("card-selected")
+                firstCard.classList.remove("card-selected")
+                secondCard.classList.remove("card-selected")
             }
-            escolhaDeCarta = 0
+            clickCard = 0
         }
     }
 }
-function finalGame() {
+function endGame() {
 
-    const quantidadeCartasViradas = document.querySelectorAll(".card-selected")
-    if (quantidadeCartasViradas.length == valueCardsGame) {
-        alert("Você ganhou em " + contadorJogadas + " jogadas!")
+    const turnCard = document.querySelectorAll(".card-selected")
+    if (turnCard.length == valueCardsGame) {
+        alert("Parabéns " + counterMove + " jogadas!")
     }
 }
+
